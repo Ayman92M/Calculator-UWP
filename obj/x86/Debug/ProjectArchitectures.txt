@@ -1,0 +1,1 @@
+D:\data\gitTest\Calculator-UWP\Calculator-UWP.csproj;x86

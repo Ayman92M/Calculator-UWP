@@ -8,7 +8,95 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <Page.Resources>
+
+        <Style x:Key="NumberStyle"              TargetType="Button">
+            <Setter Property="FontSize"             Value="24"/>
+            <Setter Property="Background"           Value="Gray"/>
+            <Setter Property="Width"                Value="Auto"/>
+            <Setter Property="Height"               Value="Auto"/>
+            <Setter Property="Margin"               Value="1"/>
+            <Setter Property="HorizontalAlignment"  Value="Stretch"/>
+            <Setter Property="VerticalAlignment"    Value="Stretch"/>
+        </Style>
+
+        <Style x:Key="OperationStyle"       TargetType="Button">
+            <Setter Property="FontSize"             Value="24"/>
+            <Setter Property="Background"           Value="#FF5A5959"/>
+            <Setter Property="Width"                Value="Auto"/>
+            <Setter Property="Height"               Value="Auto"/>
+            <Setter Property="Margin"               Value="1"/>
+            <Setter Property="FontWeight"           Value="SemiBold"/>
+            <Setter Property="HorizontalAlignment"  Value="Stretch"/>
+            <Setter Property="VerticalAlignment"    Value="Stretch"/>
+        </Style>
+
+    </Page.Resources>
+
+
+    <Grid Margin="2,2,2,2" >
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="4*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Rectangle Fill="LightGray" Margin="1,1,1,0" Grid.ColumnSpan="4" IsHitTestVisible="True" PointerPressed="displayBox_click"  ></Rectangle>
+        <Rectangle Grid.Row="1" Fill="LightGray" Margin="1,0,1,1" Grid.ColumnSpan="4" IsHitTestVisible="True" PointerPressed ="displayBox_click" ></Rectangle>
+
+        <Button Name ="key_1"  Grid.Row="4" Grid.Column="0" Content="1" Style="{StaticResource NumberStyle}" Click="Number_Click"/>
+        <Button Name ="key_2"  Grid.Row="4" Grid.Column="1" Content="2" Style="{StaticResource NumberStyle}" Click="Number_Click"/>
+        <Button Name ="key_3"  Grid.Row="4" Grid.Column="2" Content="3" Style="{StaticResource NumberStyle}" Click="Number_Click"/>
+
+        <Button Name ="key_4" Grid.Row="3" Grid.Column="0" Content="4" Style="{StaticResource NumberStyle}" Click="Number_Click"/>
+        <Button Name ="key_5" Grid.Row="3" Grid.Column="1" Content="5" Style="{StaticResource NumberStyle}" Click="Number_Click"/>
+        <Button Name ="key_6" Grid.Row="3" Grid.Column="2" Content="6" Style="{StaticResource NumberStyle}" Click="Number_Click"/>
+
+        <Button Name ="key_7" Grid.Row="2" Grid.Column="0" Content="7" Style="{StaticResource NumberStyle}" Click="Number_Click"/>
+        <Button Name ="key_8" Grid.Row="2" Grid.Column="1" Content="8" Style="{StaticResource NumberStyle}" Click="Number_Click"/>
+        <Button Name ="key_9" Grid.Row="2" Grid.Column="2" Content="9" Style="{StaticResource NumberStyle}" Click="Number_Click" />
+
+        <Button Name ="key_0" Grid.Row="5" Grid.Column="1" Content="0" Style="{StaticResource NumberStyle}" Click="Number_Click"/>
+
+
+        <Button Name ="key_Back" Grid.Row="5" Grid.Column="0" Content="C" Background="#FFFFC65D" Style="{StaticResource OperationStyle}" Click="Reset_Click"/>
+
+        <Button Name ="key_Divide" Grid.Row="2" Grid.Column="3" Content="/" Style="{StaticResource OperationStyle}" Click="Operation_Click"/>
+        <Button Name ="key_Multiply" Grid.Row="3" Grid.Column="3" Content="*" Style="{StaticResource OperationStyle}" Click="Operation_Click"/>
+        <Button Name ="key_Subtract" Grid.Row="4" Grid.Column="3" Content="-" Style="{StaticResource OperationStyle}" Click="Operation_Click"/>
+        <Button Name ="key_Add" Grid.Row="5" Grid.Column="3" Content="+" Style="{StaticResource OperationStyle}" Click="Operation_Click"/>
+        <Button Name ="key_Enter" Grid.Row="5" Grid.Column="2" Content="=" Background="#FFFFC65D" Style="{StaticResource OperationStyle}" Click="Operation_Click"/>
+
+
+        <Viewbox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" 
+                HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,16,0">
+            <StackPanel>
+                <TextBlock Name ="display_operation_text" HorizontalAlignment="Right" VerticalAlignment="Bottom" Text="" Margin="0,16,0,0" FontSize="12" TextWrapping="Wrap" 
+                           IsHitTestVisible="True" PointerPressed="displayBox_click" 
+                            
+                           />
+                <TextBlock Name ="display_edit_text" HorizontalAlignment="Right" VerticalAlignment="Top" Text="0 " FontSize="32" FontWeight="Bold"  
+                           TextWrapping="Wrap" 
+                            IsHitTestVisible="True" PointerPressed="displayBox_click" SelectionChanged="display_edit_text_SelectionChanged"/>
+            </StackPanel>
+
+        </Viewbox>
+
+
+
+
 
     </Grid>
 </Page>

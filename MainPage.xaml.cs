@@ -22,9 +22,35 @@ namespace Calculator_UWP
     /// </summary>
     public sealed partial class MainPage : Page
     {
+
         public MainPage()
         {
             this.InitializeComponent();
+        }
+
+        private void displayBox_click(object sender, PointerRoutedEventArgs e)
+        {
+
+        }
+
+        private void Reset_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Operation_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Number_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void display_edit_text_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

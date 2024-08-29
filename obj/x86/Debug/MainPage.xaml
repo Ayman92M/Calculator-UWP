@@ -1,0 +1,103 @@
+﻿<Page
+    x:Class="Calculator_UWP.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Calculator_UWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.Resources>
+
+        <Style x:Key="NumberStyle"              TargetType="Button">
+            <Setter Property="FontSize"             Value="24"/>
+            <Setter Property="Background"           Value="Gray"/>
+            <Setter Property="Width"                Value="Auto"/>
+            <Setter Property="Height"               Value="Auto"/>
+            <Setter Property="Margin"               Value="1"/>
+            <Setter Property="HorizontalAlignment"  Value="Stretch"/>
+            <Setter Property="VerticalAlignment"    Value="Stretch"/>
+        </Style>
+
+        <Style x:Key="OperationStyle"       TargetType="Button">
+            <Setter Property="FontSize"             Value="24"/>
+            <Setter Property="Background"           Value="#FF5A5959"/>
+            <Setter Property="Width"                Value="Auto"/>
+            <Setter Property="Height"               Value="Auto"/>
+            <Setter Property="Margin"               Value="1"/>
+            <Setter Property="FontWeight"           Value="SemiBold"/>
+            <Setter Property="HorizontalAlignment"  Value="Stretch"/>
+            <Setter Property="VerticalAlignment"    Value="Stretch"/>
+        </Style>
+
+    </Page.Resources>
+
+
+    <Grid Margin="2,2,2,2" >
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="4*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Rectangle x:ConnectionId='2' Fill="LightGray" Margin="1,1,1,0" Grid.ColumnSpan="4" IsHitTestVisible="True"                                    ></Rectangle>
+        <Rectangle x:ConnectionId='3' Grid.Row="1" Fill="LightGray" Margin="1,0,1,1" Grid.ColumnSpan="4" IsHitTestVisible="True"                                    ></Rectangle>
+
+        <Button x:ConnectionId='4' Name ="key_1"  Grid.Row="4" Grid.Column="0" Content="1" Style="{StaticResource NumberStyle}"                     />
+        <Button x:ConnectionId='5' Name ="key_2"  Grid.Row="4" Grid.Column="1" Content="2" Style="{StaticResource NumberStyle}"                     />
+        <Button x:ConnectionId='6' Name ="key_3"  Grid.Row="4" Grid.Column="2" Content="3" Style="{StaticResource NumberStyle}"                     />
+
+        <Button x:ConnectionId='7' Name ="key_4" Grid.Row="3" Grid.Column="0" Content="4" Style="{StaticResource NumberStyle}"                     />
+        <Button x:ConnectionId='8' Name ="key_5" Grid.Row="3" Grid.Column="1" Content="5" Style="{StaticResource NumberStyle}"                     />
+        <Button x:ConnectionId='9' Name ="key_6" Grid.Row="3" Grid.Column="2" Content="6" Style="{StaticResource NumberStyle}"                     />
+
+        <Button x:ConnectionId='10' Name ="key_7" Grid.Row="2" Grid.Column="0" Content="7" Style="{StaticResource NumberStyle}"                     />
+        <Button x:ConnectionId='11' Name ="key_8" Grid.Row="2" Grid.Column="1" Content="8" Style="{StaticResource NumberStyle}"                     />
+        <Button x:ConnectionId='12' Name ="key_9" Grid.Row="2" Grid.Column="2" Content="9" Style="{StaticResource NumberStyle}"                      />
+
+        <Button x:ConnectionId='13' Name ="key_0" Grid.Row="5" Grid.Column="1" Content="0" Style="{StaticResource NumberStyle}"                     />
+
+
+        <Button x:ConnectionId='14' Name ="key_Back" Grid.Row="5" Grid.Column="0" Content="C" Background="#FFFFC65D" Style="{StaticResource OperationStyle}"                    />
+
+        <Button x:ConnectionId='15' Name ="key_Divide" Grid.Row="2" Grid.Column="3" Content="/" Style="{StaticResource OperationStyle}"                        />
+        <Button x:ConnectionId='16' Name ="key_Multiply" Grid.Row="3" Grid.Column="3" Content="*" Style="{StaticResource OperationStyle}"                        />
+        <Button x:ConnectionId='17' Name ="key_Subtract" Grid.Row="4" Grid.Column="3" Content="-" Style="{StaticResource OperationStyle}"                        />
+        <Button x:ConnectionId='18' Name ="key_Add" Grid.Row="5" Grid.Column="3" Content="+" Style="{StaticResource OperationStyle}"                        />
+        <Button x:ConnectionId='19' Name ="key_Enter" Grid.Row="5" Grid.Column="2" Content="=" Background="#FFFFC65D" Style="{StaticResource OperationStyle}"                        />
+
+
+        <Viewbox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" 
+                HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,16,0">
+            <StackPanel>
+                <TextBlock x:ConnectionId='20' Name ="display_operation_text" HorizontalAlignment="Right" VerticalAlignment="Bottom" Text="" Margin="0,16,0,0" FontSize="12" TextWrapping="Wrap" 
+                           IsHitTestVisible="True"                                   
+                            
+                           />
+                <TextBlock x:ConnectionId='21' Name ="display_edit_text" HorizontalAlignment="Right" VerticalAlignment="Top" Text="0 " FontSize="32" FontWeight="Bold"  
+                           TextWrapping="Wrap" 
+                            IsHitTestVisible="True"                                                                                        />
+            </StackPanel>
+
+        </Viewbox>
+
+
+
+
+
+    </Grid>
+</Page>
+
